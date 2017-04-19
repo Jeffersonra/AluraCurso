@@ -24,7 +24,6 @@ namespace CaixaEletronico
             return idade >= 18; 
         }
 
-        
         // construtor
         public Cliente(string nome)
         {
