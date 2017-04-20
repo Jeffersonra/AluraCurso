@@ -8,11 +8,17 @@ namespace CaixaEletronico
 {
     class TotalizadorDeContas
     {
-        public double Saldo { get; private set; }
+        public double Total { get; private set; }
 
         public void Adiciona(Conta c)
         {
-            Saldo += c.Saldo;
+            this.Total += c.Saldo;
+        }
+
+        public void Adiciona(ContaPoupanca c)
+        {
+            this.Total += c.Saldo;
+            //c.CalculaRendimento(c.Saldo);
         }
     }
 }

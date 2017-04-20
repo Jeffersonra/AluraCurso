@@ -97,7 +97,7 @@ namespace CaixaEletronico
             //{
             //    MessageBox.Show("Não foi possível sacar da conta do Guilherme");
             //}
-            #endregion testebutton
+
 
             //Cliente cliente = new Cliente("Jefferson") { rg = "47227937-3", idade = 25, cpf = "358526778-50", endereco = "Taboão da serra" };
 
@@ -110,17 +110,50 @@ namespace CaixaEletronico
 
             //MessageBox.Show(Convert.ToString("Saldo conta poupança: " + cp.Saldo));
 
-            Conta c1 = new ContaPoupanca();
-            c1.Titular = new Cliente("Jeff") { idade = 18 };
-            c1.Deposita(100.0);
-            c1.Saca(50.0);
-            MessageBox.Show("conta poupança = " + c1.Saldo);
+            //Conta c1 = new ContaPoupanca();
+            //c1.Titular = new Cliente("Jeff") { idade = 18 };
+            //c1.Deposita(100.0);
+            //c1.Saca(50.0);
+            //MessageBox.Show("conta poupança = " + c1.Saldo);
 
-            Conta c2 = new Conta();
-            c2.Titular = new Cliente("Jeffs") { idade = 18 };
-            c2.Deposita(100.0);
-            c2.Saca(50.0);
-            MessageBox.Show("conta = " + c2.Saldo);
+            //Conta c2 = new Conta();
+            //c2.Titular = new Cliente("Jeffs") { idade = 18 };
+            //c2.Deposita(100.0);
+            //c2.Saca(50.0);
+            //MessageBox.Show("conta = " + c2.Saldo);
+            #endregion testebutton
+
+            //Conta c1 = new Conta();
+            //c1.Deposita(10);
+
+            //TotalizadorDeContas t = new TotalizadorDeContas();
+            //t.Adiciona(c1);
+
+            //MessageBox.Show("Totalizador é " + t.Total);
+
+            //ContaPoupanca c2 = new ContaPoupanca();
+            //c2.Deposita(15);
+
+            //t.Adiciona(c2);
+            //MessageBox.Show("Totalizador é " + t.Total);
+
+            Conta c = new Conta();
+            ContaCorrente cc = new ContaCorrente();
+            ContaPoupanca cp = new ContaPoupanca();
+
+            c.Deposita(1000.0);
+            cc.Deposita(1000.0);
+            cp.Deposita(1000.0);
+
+            AtualizadorDeContas atualizador = new AtualizadorDeContas(0.01);
+            atualizador.Roda(c);
+            atualizador.Roda(cc);
+            atualizador.Roda(cp);
+
+            MessageBox.Show("c = " + c.Saldo);
+            MessageBox.Show("cc = " + cc.Saldo);
+            MessageBox.Show("cp = " + cp.Saldo);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -192,7 +225,7 @@ namespace CaixaEletronico
 
         private void textValor_TextChanged(object sender, EventArgs e)
         {
-
+ 
         }
     }
 }

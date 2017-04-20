@@ -48,5 +48,16 @@ namespace CaixaEletronico
             }
 
         }
+
+        // calcula rendimento
+        public void CalculaRendimento()
+        {
+            this.Saldo += 100;
+        }
+
+        public override void Atualiza(double taxa)
+        {
+           base.Atualiza(3 * taxa);
+        }
     }
 }
