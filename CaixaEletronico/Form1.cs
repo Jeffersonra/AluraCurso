@@ -14,17 +14,39 @@ namespace CaixaEletronico
     {
         private Conta conta;
 
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        public void Form1_Load(object sender, EventArgs e)
+        {
+
+            //conta = new Conta() { Numero = 010197543, agencia = 2225 };
+            //conta.Titular = new Cliente("Jefferson Rodrigues");
+            //MostraConta();
+
+            Conta[] contas = new Conta[2];
+            contas[0] = new Conta() { Numero = 0101256586, agencia = 2222};
+            contas[0].Titular = new Cliente("Jefferson Rodrigues");
+
+            contas[1] = new Conta() { Numero = 010197543, agencia = 2225 };
+            contas[1].Titular = new Cliente("Kratos de Sparta");
+
+            foreach(Conta conta in contas){
+                comboContas.Items.Add(conta.Titular.Nome);
+            }
+            
+
+
+        }
+
         private void MostraConta()
         {
             textTitular.Text = conta.Titular.Nome;
             textNumeroConta.Text = Convert.ToString(conta.Numero);
             textSaldo.Text = Convert.ToString(conta.Saldo);
             textAgencia.Text = Convert.ToString(conta.agencia);
-        }
-
-        public Form1()
-        {
-            InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -220,15 +242,6 @@ namespace CaixaEletronico
             this.Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-            conta = new Conta() { Numero = 010197543, agencia = 2225 };
-            conta.Titular = new Cliente("Jefferson Rodrigues");
-            MostraConta();
-
-        }
-
         private void Depositar_Click(object sender, EventArgs e)
         {
 
@@ -262,7 +275,10 @@ namespace CaixaEletronico
 
         }
 
+        private void textValor_TextChanged(object sender, EventArgs e)
+        {
 
+        }
 
         #endregion Form
 
@@ -284,9 +300,10 @@ namespace CaixaEletronico
             MostraConta();
         }
 
-        private void textValor_TextChanged(object sender, EventArgs e)
+        private void comboContas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int indiceSelecionado = comboContas.SelectedIndex;
+            Conta contaSelecionada = contas[indiceSelecionado];
         }
     }
 }

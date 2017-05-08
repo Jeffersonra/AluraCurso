@@ -43,6 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textAgencia = new System.Windows.Forms.TextBox();
             this.Sacar = new System.Windows.Forms.Button();
+            this.comboContas = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -75,10 +76,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Kozuka Gothic Pro H", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(80, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 29);
+            this.label1.Size = new System.Drawing.Size(211, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Caixa Eletônico - Alura";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -184,11 +185,21 @@
             this.Sacar.UseVisualStyleBackColor = true;
             this.Sacar.Click += new System.EventHandler(this.Sacar_Click);
             // 
+            // comboContas
+            // 
+            this.comboContas.FormattingEnabled = true;
+            this.comboContas.Location = new System.Drawing.Point(97, 195);
+            this.comboContas.Name = "comboContas";
+            this.comboContas.Size = new System.Drawing.Size(211, 21);
+            this.comboContas.TabIndex = 17;
+            this.comboContas.SelectedIndexChanged += new System.EventHandler(this.comboContas_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 368);
+            this.Controls.Add(this.comboContas);
             this.Controls.Add(this.Sacar);
             this.Controls.Add(this.textAgencia);
             this.Controls.Add(this.label6);
@@ -229,6 +240,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textAgencia;
         private System.Windows.Forms.Button Sacar;
+        private System.Windows.Forms.ComboBox comboContas;
     }
 }
 
