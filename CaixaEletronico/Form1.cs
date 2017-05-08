@@ -121,7 +121,7 @@ namespace CaixaEletronico
             //c2.Deposita(100.0);
             //c2.Saca(50.0);
             //MessageBox.Show("conta = " + c2.Saldo);
-            #endregion testebutton
+
 
             //Conta c1 = new Conta();
             //c1.Deposita(10);
@@ -137,22 +137,81 @@ namespace CaixaEletronico
             //t.Adiciona(c2);
             //MessageBox.Show("Totalizador é " + t.Total);
 
-            Conta c = new Conta();
-            ContaCorrente cc = new ContaCorrente();
-            ContaPoupanca cp = new ContaPoupanca();
+            //Conta c = new Conta();
+            //ContaCorrente cc = new ContaCorrente();
+            //ContaPoupanca cp = new ContaPoupanca();
 
-            c.Deposita(1000.0);
-            cc.Deposita(1000.0);
-            cp.Deposita(1000.0);
+            //c.Deposita(1000.0);
+            //cc.Deposita(1000.0);
+            //cp.Deposita(1000.0);
 
-            AtualizadorDeContas atualizador = new AtualizadorDeContas(0.01);
-            atualizador.Roda(c);
-            atualizador.Roda(cc);
-            atualizador.Roda(cp);
+            //AtualizadorDeContas atualizador = new AtualizadorDeContas(0.01);
+            //atualizador.Roda(c);
+            //atualizador.Roda(cc);
+            //atualizador.Roda(cp);
 
-            MessageBox.Show("c = " + c.Saldo);
-            MessageBox.Show("cc = " + cc.Saldo);
-            MessageBox.Show("cp = " + cp.Saldo);
+            //MessageBox.Show("c = " + c.Saldo);
+            //MessageBox.Show("cc = " + cc.Saldo);
+            //MessageBox.Show("cp = " + cp.Saldo);
+            #endregion testebutton
+
+
+            //int[] numeoros = new int[5];
+            //numeoros[0] = 55;
+            //numeoros[1] = 1;
+            //numeoros[2] = 10;
+            //numeoros[3] = 20;
+            //numeoros[4] = 30;
+
+            //for (int i = 0; i <= 4; i++)
+            //    {
+            //        MessageBox.Show("numero da Array; " + numeoros[i]);
+            //    }
+
+            //Conta[] contas = new Conta[2];
+            //contas[0] = new Conta();
+            //contas[1] = new ContaPoupanca();
+
+            //contas[0].Deposita(100);
+            //contas[1].Deposita(150);
+
+            ////for (int i = 0; i < contas.Length; i++)
+            ////{
+            ////    MessageBox.Show("o Saldo da conta é: " + contas[i].Saldo);
+            ////}
+
+
+            //foreach(Conta conta in contas) // O foreach - passa por todos os elementos
+            //{
+            //    MessageBox.Show("o Saldo da conta é: " + conta.Saldo);
+            //}
+
+
+            //Conta[] banco = new Conta[3];
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    banco[i] = new Conta();
+            //    banco[i].Numero = (i + 1) * 100;
+            //    Console.WriteLine(banco[i].Numero);
+            //}
+
+            //string[] nomes = new string[] { "mauricio", "mario", "victor", "william", "guilherme" };
+            //string concatenacao = "";
+            //foreach (string nome in nomes)
+            //{
+            //    concatenacao += " " + nome;
+            //}
+            //MessageBox.Show(concatenacao);
+
+
+            Banco banco = new Banco();
+
+            banco.adiciona(conta);
+            banco.adiciona(conta);
+            banco.adiciona(conta);
+            banco.adiciona(conta);
+
+            MessageBox.Show(banco.quantidade.ToString());
 
         }
 
@@ -164,7 +223,7 @@ namespace CaixaEletronico
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            conta = new Conta() {Numero = 010197543, agencia = 2225};
+            conta = new Conta() { Numero = 010197543, agencia = 2225 };
             conta.Titular = new Cliente("Jefferson Rodrigues");
             MostraConta();
 
@@ -175,7 +234,7 @@ namespace CaixaEletronico
 
             conta.Deposita(Convert.ToDouble(textValor.Text));
             MessageBox.Show("Deposito Realizado!");
-
+            textValor.Text = "";
             MostraConta();
 
         }
@@ -214,18 +273,20 @@ namespace CaixaEletronico
             if (saque)
             {
                 MessageBox.Show("Saque Realizado!");
+                textValor.Text = "";
             }
             else
             {
                 MessageBox.Show("Não foi possível sacar da conta do " + conta.Titular.Nome);
+                textValor.Text = "";
             }
 
-             MostraConta();
+            MostraConta();
         }
 
         private void textValor_TextChanged(object sender, EventArgs e)
         {
- 
+
         }
     }
 }

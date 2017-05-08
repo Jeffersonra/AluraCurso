@@ -44,7 +44,7 @@ namespace CaixaEletronico
         {
             if (valor > 0)
             {
-                Saldo += valor + 0.1;
+                Saldo += valor - 0.1;
             }
 
         }
