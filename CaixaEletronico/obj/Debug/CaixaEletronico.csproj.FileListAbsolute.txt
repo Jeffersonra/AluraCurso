@@ -34,4 +34,3 @@ C:\Users\jeffe\Source\Repos\AluraCurso3\CaixaEletronico\obj\Debug\CaixaEletronic
 C:\Users\jeffe\Source\Repos\AluraCurso3\CaixaEletronico\bin\Debug\CaixaEletronico.exe
 C:\Users\jeffe\Source\Repos\AluraCurso3\CaixaEletronico\bin\Debug\CaixaEletronico.pdb
 C:\Users\jeffe\Source\Repos\AluraCurso3\CaixaEletronico\obj\Debug\CaixaEletronico.pdb
-C:\Users\jeffe\Source\Repos\AluraCurso3\CaixaEletronico\obj\Debug\CaixaEletronico.Form2.resources

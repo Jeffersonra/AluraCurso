@@ -353,24 +353,32 @@ namespace CaixaEletronico
 
         private void btnTranfere_Click(object sender, EventArgs e)
         {
-            double valorTrans = Convert.ToDouble(textValor.Text);
-
-            Conta contaSelecionada = this.BuscaContaSelecionada();
-            Conta contaSelecionadaTransfere = this.BuscaContaSelecionadaTrans();
-
-            bool transfere = contaSelecionada.Transfere(valorTrans, contaSelecionadaTransfere);
-            
-            if (transfere)
+            if (textValor.Text != null)
             {
-                MessageBox.Show("Transferencia Realizada");
-                textValor.Text = "0";
+                double valorTrans = Convert.ToDouble(textValor.Text);
+
+                Conta contaSelecionada = this.BuscaContaSelecionada();
+                Conta contaSelecionadaTransfere = this.BuscaContaSelecionadaTrans();
+
+                bool transfere = contaSelecionada.Transfere(valorTrans, contaSelecionadaTransfere);
+
+                if (transfere)
+                {
+                    MessageBox.Show("Transferencia Realizada");
+                    textValor.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel realizar transferencia");
+                }
+
+                MostraConta(contaSelecionada);
             }
             else
             {
-                MessageBox.Show("Não foi possivel realizar transferencia");
+                MessageBox.Show("Por favor selecione o valor ou a conta a transferir");
             }
-                                   
-            MostraConta(contaSelecionada);
+            
         }
     }
 }
