@@ -61,10 +61,20 @@ namespace CaixaEletronico
         }
 
         // metodo transfere
-        public void Transfere(double valor, Conta destino)
+        public virtual bool Transfere(double valor, Conta destino)
         {
-            this.Saca(valor);
-            destino.Deposita(valor);
+            
+            bool saque = this.Saca(valor);
+
+            if (saque)
+            {
+                destino.Deposita(valor);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         // metodo calcula rendimento

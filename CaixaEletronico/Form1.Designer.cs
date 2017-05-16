@@ -44,6 +44,10 @@
             this.textAgencia = new System.Windows.Forms.TextBox();
             this.Sacar = new System.Windows.Forms.Button();
             this.comboContas = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboTransfere = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnTranfere = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -58,9 +62,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(260, 333);
+            this.button2.Location = new System.Drawing.Point(299, 333);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 23);
+            this.button2.Size = new System.Drawing.Size(70, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Sair";
             this.button2.UseVisualStyleBackColor = true;
@@ -130,7 +134,7 @@
             // 
             // Depositar
             // 
-            this.Depositar.Location = new System.Drawing.Point(15, 276);
+            this.Depositar.Location = new System.Drawing.Point(7, 323);
             this.Depositar.Name = "Depositar";
             this.Depositar.Size = new System.Drawing.Size(105, 32);
             this.Depositar.TabIndex = 11;
@@ -140,7 +144,7 @@
             // 
             // textValor
             // 
-            this.textValor.Location = new System.Drawing.Point(15, 250);
+            this.textValor.Location = new System.Drawing.Point(7, 297);
             this.textValor.Name = "textValor";
             this.textValor.Size = new System.Drawing.Size(105, 20);
             this.textValor.TabIndex = 12;
@@ -150,7 +154,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 234);
+            this.label3.Location = new System.Drawing.Point(4, 281);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 13;
@@ -176,7 +180,7 @@
             // 
             // Sacar
             // 
-            this.Sacar.Location = new System.Drawing.Point(126, 276);
+            this.Sacar.Location = new System.Drawing.Point(118, 323);
             this.Sacar.Name = "Sacar";
             this.Sacar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Sacar.Size = new System.Drawing.Size(105, 32);
@@ -188,17 +192,60 @@
             // comboContas
             // 
             this.comboContas.FormattingEnabled = true;
-            this.comboContas.Location = new System.Drawing.Point(97, 195);
+            this.comboContas.Location = new System.Drawing.Point(97, 181);
             this.comboContas.Name = "comboContas";
             this.comboContas.Size = new System.Drawing.Size(211, 21);
             this.comboContas.TabIndex = 17;
             this.comboContas.SelectedIndexChanged += new System.EventHandler(this.comboContas_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label7.Location = new System.Drawing.Point(35, 182);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 17);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Titular: ";
+            // 
+            // comboTransfere
+            // 
+            this.comboTransfere.FormattingEnabled = true;
+            this.comboTransfere.Location = new System.Drawing.Point(60, 252);
+            this.comboTransfere.Name = "comboTransfere";
+            this.comboTransfere.Size = new System.Drawing.Size(211, 21);
+            this.comboTransfere.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label8.Location = new System.Drawing.Point(4, 253);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 17);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Para:  ";
+            // 
+            // btnTranfere
+            // 
+            this.btnTranfere.Location = new System.Drawing.Point(277, 245);
+            this.btnTranfere.Name = "btnTranfere";
+            this.btnTranfere.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnTranfere.Size = new System.Drawing.Size(92, 32);
+            this.btnTranfere.TabIndex = 21;
+            this.btnTranfere.Text = "Transferir";
+            this.btnTranfere.UseVisualStyleBackColor = true;
+            this.btnTranfere.Click += new System.EventHandler(this.btnTranfere_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 368);
+            this.Controls.Add(this.btnTranfere);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.comboTransfere);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.comboContas);
             this.Controls.Add(this.Sacar);
             this.Controls.Add(this.textAgencia);
@@ -241,6 +288,10 @@
         private System.Windows.Forms.TextBox textAgencia;
         private System.Windows.Forms.Button Sacar;
         private System.Windows.Forms.ComboBox comboContas;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboTransfere;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnTranfere;
     }
 }
 
