@@ -8,6 +8,14 @@ namespace CaixaEletronico
 {
     abstract class Conta
     {
+
+        public Conta()
+        {
+            Conta.TotalDeContas++;
+        }
+
+        public static int TotalDeContas { get; private set; }
+
         public Cliente Titular { get; set; }
 
         public double Saldo { get; protected set; }
@@ -61,6 +69,12 @@ namespace CaixaEletronico
         public virtual void Atualiza(double taxa)
         {
             this.Saldo += this.Saldo * taxa;
+        }
+
+        //Proximo Numero da conta
+        public static int ProximoNumeroConta()
+        {
+            return Conta.TotalDeContas + 1;
         }
     
     }

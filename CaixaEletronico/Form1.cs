@@ -275,6 +275,8 @@ namespace CaixaEletronico
 
             MessageBox.Show("Totalizador: " + t.Total);   
             MessageBox.Show("Totalizador: " + g.Total);
+            MessageBox.Show("Total de contas: " + Conta.TotalDeContas);
+            MessageBox.Show("Proximo numero conta: " + Conta.ProximoNumeroConta());
         }
 
         private void button2_Click(object sender, EventArgs e)
