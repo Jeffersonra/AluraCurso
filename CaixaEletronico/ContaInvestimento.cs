@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CaixaEletronico
 {
-    class ContaPoupanca : Conta, ITributavel
+    class ContaInvestimento : Conta, ITributavel
     {
-        // saca poupança
+        // Class Abstract saca Necessita ser criada toda vez que a classe for herdada da class Conta
         public override bool Saca(double valor)
         {
             if (Saldo <= 0 || Saldo < valor)
@@ -19,7 +19,7 @@ namespace CaixaEletronico
             {
                 if (Titular.EhMaiorDeIdade())
                 {
-                    Saldo -= valor + 0.1;
+                    Saldo -= valor;
                     return true;
                 }
                 else
@@ -31,39 +31,26 @@ namespace CaixaEletronico
                     }
                     else
                     {
-                        Saldo -= valor + 0.1;
+                        Saldo -= valor;
                         return true;
                     }
                 }
 
             }
-
         }
-        //deposita
-        public override void Deposita(Double valor)
+        // Class Abstract Deposita Necessita ser criada toda vez que a classe for herdada da class Conta
+        public override void Deposita(double valor)
         {
             if (valor > 0)
             {
-                Saldo += valor - 0.1;
+                Saldo += valor;
             }
-
-        }
-
-        // calcula rendimento
-        public void CalculaRendimento()
-        {
-            this.Saldo += 100;
-        }
-
-        public override void Atualiza(double taxa)
-        {
-           base.Atualiza(3 * taxa);
         }
 
         public double CalculaTributo()
         {
-            return this.Saldo * 0.02;
+            return this.Saldo * 0.03;
         }
-
     }
+
 }

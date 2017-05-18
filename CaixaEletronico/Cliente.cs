@@ -19,6 +19,8 @@ namespace CaixaEletronico
 
         public int idade;
 
+        public bool EEmancipado { get; set; }
+
         public bool EhMaiorDeIdade()
         {
             return idade >= 18; 
@@ -31,5 +33,14 @@ namespace CaixaEletronico
         }
 
         public Cliente() { }
+
+        public bool PodeAbrirConta()
+        {
+            var maiorDeIdade = (this.idade >= 18);
+            var emancipado = (this.EEmancipado);
+            var temCpf = !string.IsNullOrEmpty(this.cpf);
+
+            return (maiorDeIdade || emancipado) && temCpf;
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CaixaEletronico
 {
-    class Conta
+    abstract class Conta
     {
         public Cliente Titular { get; set; }
 
@@ -19,46 +19,11 @@ namespace CaixaEletronico
         public int tipo { get; set; } // 1 = corrente & 2 = poupança
 
         // metodo saca
-        public virtual bool Saca(double valor)
-        {
-            if (Saldo <= 0 || Saldo < valor)
-            {
-                return false;
-            }
-            else
-            {
-                if (Titular.EhMaiorDeIdade())
-                {
-                        Saldo -= valor;
-                        return true;
-                }
-                else
-                {
-                    if (valor >= 200)
-                    {
-                        
-                        return false;
-                    }
-                    else
-                    {
-                        Saldo -= valor;
-                        return true;
-                    }
-                }
-                
-            }          
-                        
-        }
+        public abstract bool Saca(double valor);
 
         // metodo deposita
-        public virtual void Deposita(Double valor)
-        {
-            if(valor > 0)
-            {
-                Saldo += valor;
-            }
-            
-        }
+        public abstract void Deposita(Double valor);
+        
 
         // metodo transfere
         public virtual bool Transfere(double valor, Conta destino)
@@ -97,5 +62,6 @@ namespace CaixaEletronico
         {
             this.Saldo += this.Saldo * taxa;
         }
+    
     }
 }

@@ -27,12 +27,12 @@ namespace CaixaEletronico
         public void Form1_Load(object sender, EventArgs e)
         {
 
-            Conta contaDoJeff = new Conta() {agencia = 2225, Numero = 01010101021 };
+            Conta contaDoJeff = new ContaPoupanca() {agencia = 2225, Numero = 01010101021 };
             contaDoJeff.Titular = new Cliente() {Nome = "Jefferson Sousa" };
             contaDoJeff.Deposita(150);
             contas[0] = contaDoJeff;
 
-            Conta contaDokratos = new Conta() { agencia = 300, Numero = 300300300 };
+            Conta contaDokratos = new ContaCorrente() { agencia = 300, Numero = 300300300 };
             contaDokratos.Titular = new Cliente() { Nome = "Kratos de Sparta" };
             contaDokratos.Deposita(300);
             contas[1] = contaDokratos;
@@ -52,6 +52,7 @@ namespace CaixaEletronico
             textAgencia.Text = Convert.ToString(conta.agencia);
         }
 
+        //botão de teste
         private void button1_Click(object sender, EventArgs e)
         {
             #region testebutton
@@ -239,11 +240,41 @@ namespace CaixaEletronico
             //MessageBox.Show(banco.quantidade.ToString());
 
             #endregion testebutton
- 
-           // MessageBox.Show(contas[0].Titular.Nome);
 
-            
+            // MessageBox.Show(contas[0].Titular.Nome);
 
+            //var jeff = new Cliente("Jefferson") {EEmancipado = true, cpf = "35852677850"};
+
+
+            //if (jeff.PodeAbrirConta())
+            //{
+            //    MessageBox.Show("Pode abrir conta");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("não pode abrir conta");
+            //}
+
+            ContaPoupanca cp = new ContaPoupanca();
+            ContaInvestimento ci = new ContaInvestimento();
+            SeguroDeVida sv = new SeguroDeVida();
+
+            cp.Deposita(100.1);
+            ci.Deposita(100);
+
+            GerenciadorDeImposto g = new GerenciadorDeImposto();
+
+            g.Adiciona(cp);
+            g.Adiciona(ci);
+            g.Adiciona(sv);
+
+            TotalizadorDeTributos t = new TotalizadorDeTributos();
+            t.Acumula(cp);
+            t.Acumula(ci);
+           
+
+            MessageBox.Show("Totalizador: " + t.Total);   
+            MessageBox.Show("Totalizador: " + g.Total);
         }
 
         private void button2_Click(object sender, EventArgs e)
