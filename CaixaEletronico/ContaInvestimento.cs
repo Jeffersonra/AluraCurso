@@ -52,5 +52,5 @@ namespace CaixaEletronico
             return this.Saldo * 0.03;
         }
     }
-
+     
 }
