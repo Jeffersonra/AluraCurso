@@ -15,36 +15,50 @@ namespace CaixaEletronico
 
         public override bool Saca(double valor)
         {
-            if (Saldo <= 0 || Saldo < valor)
+            try
             {
-                return false;
-            }
-            else
-            {
-                if (Titular.EhMaiorDeIdade())
+                if (valor < 0)
                 {
-                    Saldo -= valor;
-                    return true;
+                    throw new Exception();
+                }
+
+                if (Saldo <= 0 || Saldo < valor)
+                {
+                    return false;
                 }
                 else
                 {
-                    if (valor >= 200)
-                    {
-
-                        return false;
-                    }
-                    else
+                    if (Titular.EhMaiorDeIdade())
                     {
                         Saldo -= valor;
                         return true;
                     }
-                }
+                    else
+                    {
+                        if (valor >= 200)
+                        {
 
+                            return false;
+                        }
+                        else
+                        {
+                            Saldo -= valor;
+                            return true;
+                        }
+                    }
+
+                }
             }
+            catch
+            {
+                return false;
+            }
+            
         }
 
         public override void Deposita(double valor)
         {
+
             if (valor > 0)
               {
                 Saldo += valor;

@@ -286,20 +286,29 @@ namespace CaixaEletronico
 
         private void Depositar_Click(object sender, EventArgs e)
         {
-            if (textValor.Text != "0" && textValor.Text != "")
+            try
             {
-                double valordep = Convert.ToDouble(textValor.Text);
+                if (textValor.Text != "0" && textValor.Text != "")
+                {
+                    double valordep = Convert.ToDouble(textValor.Text);
 
-                Conta contaSelecionada = this.BuscaContaSelecionada();
-                contaSelecionada.Deposita(valordep);
-                MessageBox.Show("Deposito Realizado!");
-                textValor.Text = "";
-                MostraConta(contaSelecionada);
+                    Conta contaSelecionada = this.BuscaContaSelecionada();
+                    contaSelecionada.Deposita(valordep);
+                    MessageBox.Show("Deposito Realizado!");
+                    textValor.Text = "0";
+                    MostraConta(contaSelecionada);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor digite um valor!");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Por favor digite um valor!");
+                MessageBox.Show("Valor Digitado Invalido!");
+                textValor.Text = "0";
             }
+            
 
 
         }
@@ -335,31 +344,40 @@ namespace CaixaEletronico
 
         private void Sacar_Click(object sender, EventArgs e)
         {
-            if (textValor.Text != "0" && textValor.Text != "")
+            try
             {
-
-                double valorSaque = Convert.ToDouble(textValor.Text);
-                Conta contaSelecionada = this.BuscaContaSelecionada();
-
-                bool saque = contaSelecionada.Saca(valorSaque);
-
-                if (saque)
+                if (textValor.Text != "0" && textValor.Text != "")
                 {
-                    MessageBox.Show("Saque Realizado!");
-                    textValor.Text = "";
+
+                    double valorSaque = Convert.ToDouble(textValor.Text);
+                    Conta contaSelecionada = this.BuscaContaSelecionada();
+
+                    bool saque = contaSelecionada.Saca(valorSaque);
+
+                    if (saque)
+                    {
+                        MessageBox.Show("Saque Realizado!");
+                        textValor.Text = "0";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possível sacar da conta do " + contaSelecionada.Titular.Nome);
+                        textValor.Text = "0";
+                    }
+
+                    MostraConta(contaSelecionada);
                 }
                 else
                 {
-                    MessageBox.Show("Não foi possível sacar da conta do " + contaSelecionada.Titular.Nome);
-                    textValor.Text = "";
+                    MessageBox.Show("Por favor digite um valor!");
                 }
-
-                MostraConta(contaSelecionada);
             }
-            else
+            catch
             {
-                MessageBox.Show("Por favor digite um valor!");
+                MessageBox.Show("Valor digitado Invalido");
+                textValor.Text = "0";
             }
+            
 
 
         }
