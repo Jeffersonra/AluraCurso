@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JeffDev.CaixaEletronico.Clientes;
+using JeffDev.CaixaEletronico.Contas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CaixaEletronico
+
+namespace JeffDev.CaixaEletronico
 {
     public partial class Form1 : Form
     {
@@ -288,6 +291,10 @@ namespace CaixaEletronico
         {
             try
             {
+                if(Convert.ToDouble(textValor.Text) < 0)
+                {
+                    throw new Exception();
+                }
                 if (textValor.Text != "0" && textValor.Text != "")
                 {
                     double valordep = Convert.ToDouble(textValor.Text);
@@ -396,6 +403,7 @@ namespace CaixaEletronico
             int indiceSelecionado = comboContas.SelectedIndex;
             return this.contas[indiceSelecionado];
         }
+
         private Conta BuscaContaSelecionadaTrans()
         {
             int indiceSelecionado = comboTransfere.SelectedIndex;

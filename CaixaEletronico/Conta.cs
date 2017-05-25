@@ -1,10 +1,11 @@
-﻿using System;
+﻿using JeffDev.CaixaEletronico.Clientes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CaixaEletronico
+namespace JeffDev.CaixaEletronico.Contas
 {
     abstract class Conta
     {

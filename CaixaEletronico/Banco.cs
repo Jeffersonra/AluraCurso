@@ -1,10 +1,11 @@
-﻿using System;
+﻿using JeffDev.CaixaEletronico.Contas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CaixaEletronico
+namespace JeffDev.CaixaEletronico.Banco
 {
     class Banco
     {

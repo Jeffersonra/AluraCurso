@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CaixaEletronico
+namespace JeffDev.CaixaEletronico.Contas
 {
     class ContaCorrente : Conta
     {
@@ -58,7 +58,6 @@ namespace CaixaEletronico
 
         public override void Deposita(double valor)
         {
-
             if (valor > 0)
               {
                 Saldo += valor;
