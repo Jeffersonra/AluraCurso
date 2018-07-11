@@ -63,6 +63,11 @@ namespace JeffDev.CaixaEletronico.Contas
                 Saldo += valor;
              }
         }
+
+        public void transferi(double valor)
+        {
+            var teste = "teste";
+        }
          
     }
 }

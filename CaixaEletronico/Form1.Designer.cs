@@ -48,6 +48,7 @@ private void InitializeComponent()
             this.comboTransfere = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnTranfere = new System.Windows.Forms.Button();
+            this.btnAddConta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -237,11 +238,22 @@ private void InitializeComponent()
             this.btnTranfere.UseVisualStyleBackColor = true;
             this.btnTranfere.Click += new System.EventHandler(this.btnTranfere_Click);
             // 
+            // btnAddConta
+            // 
+            this.btnAddConta.Location = new System.Drawing.Point(148, 208);
+            this.btnAddConta.Name = "btnAddConta";
+            this.btnAddConta.Size = new System.Drawing.Size(75, 23);
+            this.btnAddConta.TabIndex = 22;
+            this.btnAddConta.Text = "Nova Conta";
+            this.btnAddConta.UseVisualStyleBackColor = true;
+            this.btnAddConta.Click += new System.EventHandler(this.btnAddConta_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 368);
+            this.Controls.Add(this.btnAddConta);
             this.Controls.Add(this.btnTranfere);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboTransfere);
@@ -292,6 +304,7 @@ private void InitializeComponent()
         private System.Windows.Forms.ComboBox comboTransfere;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnTranfere;
+        private System.Windows.Forms.Button btnAddConta;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JeffDev.CaixaEletronico.Clientes
 {
-    class Cliente
+    public class Cliente
     {
         
         public string Nome;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JeffDev.CaixaEletronico.Contas
 {
-    abstract class Conta
+    public abstract class Conta
     {
 
         public Conta()

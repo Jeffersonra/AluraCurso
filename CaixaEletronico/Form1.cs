@@ -18,7 +18,7 @@ namespace JeffDev.CaixaEletronico
         private Conta conta;
 
         // Conta [] contas;
-        Conta[] contas = new Conta[2];
+        Conta[] contas = new Conta[10];
 
         Conta contaSelecionada;
 
@@ -39,12 +39,18 @@ namespace JeffDev.CaixaEletronico
             contaDokratos.Titular = new Cliente() { Nome = "Kratos de Sparta" };
             contaDokratos.Deposita(300);
             contas[1] = contaDokratos;
-
-            foreach (Conta c in contas){
+            int count = 0;
+            foreach (Conta c in contas)
+            {
                 comboContas.Items.Add(c.Titular.Nome);
                 comboTransfere.Items.Add(c.Titular.Nome);
+                
+                count++;
+                if (count.Equals(2))
+                {
+                    break;
+                }
             }
-            
         }
 
         private void MostraConta(Conta conta)
@@ -438,6 +444,19 @@ namespace JeffDev.CaixaEletronico
                 MessageBox.Show("Por favor selecione o valor ou a conta a transferir");
             }
             
+        }
+
+        public void AdicionarConta(Conta conta)
+        {
+            this.contas[2] = conta;
+
+            comboContas.Items.Add(conta.Titular.Nome);
+        }
+
+        private void btnAddConta_Click(object sender, EventArgs e)
+        {
+            CadastroDeContas cadastro = new CadastroDeContas(this);
+            cadastro.ShowDialog();
         }
     }
 }

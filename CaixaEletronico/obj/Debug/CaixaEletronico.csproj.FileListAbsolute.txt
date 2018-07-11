@@ -34,3 +34,14 @@ C:\Users\jeffe\Source\Repos\AluraCurso3\CaixaEletronico\bin\Debug\CaixaEletronic
 C:\Users\jeffe\Source\Repos\AluraCurso3\CaixaEletronico\obj\Debug\CaixaEletronico.pdb
 C:\Users\jeffe\Source\Repos\AluraCurso3\CaixaEletronico\obj\Debug\JeffDev.CaixaEletronico.Form1.resources
 C:\Users\jeffe\Source\Repos\AluraCurso3\CaixaEletronico\obj\Debug\JeffDev.CaixaEletronico.Properties.Resources.resources
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\bin\Debug\CaixaEletronico.exe.config
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\bin\Debug\CaixaEletronico.exe
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\bin\Debug\CaixaEletronico.pdb
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\obj\Debug\CaixaEletronico.csprojResolveAssemblyReference.cache
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\obj\Debug\JeffDev.CaixaEletronico.Form1.resources
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\obj\Debug\JeffDev.CaixaEletronico.Properties.Resources.resources
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\obj\Debug\CaixaEletronico.csproj.GenerateResource.Cache
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\obj\Debug\CaixaEletronico.csproj.CoreCompileInputs.cache
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\obj\Debug\CaixaEletronico.exe
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\obj\Debug\CaixaEletronico.pdb
+C:\Users\jeffe\Source\Repos\AluraCurso\CaixaEletronico\obj\Debug\JeffDev.CaixaEletronico.CadastroDeContas.resources
